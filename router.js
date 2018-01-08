@@ -1,28 +1,18 @@
 import React from 'react';
-import { DrawerNavigator, StackNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 import AgendaScreen from './Components/Agenda';
+import Page1 from './Components/Page1';
 
-const DrawerStack = DrawerNavigator({
-  screen: { AgendaScreen: AgendaScreen }
+export default DrawerNavigator({
+  Menu: {
+    screen: AgendaScreen
+  },
+  Page2: {
+    screen: Page1
+  }
 }, {
-  initialRouteName: 'AgendaScreen',
-  // contentComponent: Menu,
-  headerMode: 'float',
-  navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: '#4C3E54'},
-    title: 'Welcome!',
-    headerTintColor: 'white',
-  })
+  drawerWidth: 300,
+  drawerOpenRoute: 'DrawerOpen',
+  drawerCloseRoute: 'DrawerClose',
+  drawerToggleRoute: 'DrawerToggle'
 });
-
-const RootNavigator = StackNavigator({
-  // Home: {
-  //   screen: AgendaScreen,
-  //   navigationOptions: {
-  //   	title: 'Home Screen'
-  //   }
-  // },
-  drawerStack: {DrawerStack}
-});
-
-export default RootNavigator;

@@ -4,7 +4,8 @@ import {
   View,
   StyleSheet
 } from 'react-native';
-import {Agenda} from 'react-native-calendars';
+import { Agenda } from 'react-native-calendars';
+import { NavigationActions } from 'react-navigation';
 
 class AgendaScreen extends Component {
   constructor(props) {
@@ -12,6 +13,13 @@ class AgendaScreen extends Component {
     this.state = {
       items: {}
     };
+  }
+
+  navigateToScreen = (route) => () => {
+    const navigateAction = NavigationActions.navigate({
+      routeName: route
+    });
+    this.props.navigation.dispatch(navigateAction);
   }
 
   render() {
