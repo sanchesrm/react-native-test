@@ -1,17 +1,18 @@
 import React from 'react';
+import { Dimensions } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import AgendaScreen from './Components/Agenda';
-import Page1 from './Components/Page1';
+import AddCompromisso from './Components/AddCompromisso';
 
 export default DrawerNavigator({
-  Menu: {
+  Calendar: {
     screen: AgendaScreen
   },
-  Page2: {
-    screen: Page1
+  'Add Class': {
+    screen: AddCompromisso
   }
 }, {
-  drawerWidth: 300,
+	drawerWidth: Dimensions.get('window').width * 0.6,
   drawerOpenRoute: 'DrawerOpen',
   drawerCloseRoute: 'DrawerClose',
   drawerToggleRoute: 'DrawerToggle'
