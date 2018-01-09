@@ -15,7 +15,7 @@ class AddCompromisso extends Component {
         <FormLabel>Class</FormLabel>
         <FormInput placeholder="Type the class"/>
 
-        <DatePicker mode="date" />
+        <DatePicker mode="date" style={{ flex:1 }} />
         <DatePicker mode="time" format="HH:mm" />
       </View>
     );
